@@ -23,7 +23,7 @@ class _CarouselCustomState extends State<CarouselCustom> {
           AssetImage('images/w3.jpeg'),
         ],
         autoplay: true,
-        animationCurve: Curves.slowMiddle,
+        animationCurve: Curves.fastOutSlowIn,
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         dotBgColor: Colors.transparent,

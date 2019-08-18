@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 //my imports
+//import 'package:mobile_shop/Components/appBar.dart';
 import 'package:mobile_shop/Components/menu.dart';
 import 'package:mobile_shop/Components/carousel.dart';
 import 'package:mobile_shop/Components/horizontalList.dart';

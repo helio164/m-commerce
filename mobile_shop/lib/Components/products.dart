@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_shop/Pages/product_details.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _ProductsState extends State<Products> {
       "price": 31.00,
     },
     {
-      "name": "Blazer",
+      "name": "Blazer 2",
       "picture": "images/products/blazer2.jpeg",
       "old_price": 59.00,
       "price": 37.00,
@@ -71,7 +72,49 @@ class Single_prod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Card(
+      child: Hero(
+          tag: prod_name,
+          child: Material(
+            child: InkWell(
+              onTap: ()=> Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => new ProductDetails(
+                    prod_name: prod_name,
+                    prod_picture: prod_picture,
+                    prod_price: prod_price,
+                    prod_oldprice: prod_oldprice,
+                  ))),
+              child: GridTile(
+                footer: Container(
+                  color: Colors.white70,
+                  child: ListTile(
+                    leading: Text(prod_name,
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    title: Text(
+                      "$prod_price €",
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.w800),
+                    ),
+                    subtitle: Text(
+                      "$prod_oldprice €",
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontWeight: FontWeight.normal,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                child: Image.asset(
+                  prod_picture,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          )),
+    );
+    /*Container(
       padding: EdgeInsets.all(10.0),
       alignment: Alignment.center,
       child: ListTile(
@@ -82,6 +125,6 @@ class Single_prod extends StatelessWidget {
         ),
 
       ),
-    );
+    );*/
   }
 }
